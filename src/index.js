@@ -5,9 +5,8 @@ const languageWordSecondary = document.querySelector('#language-word-secondary')
 const percentage = document.querySelector('#percentage');
 const nextButton = document.querySelector('#next');
 const progressSection = document.querySelector('.progress-section');
-// let progressSectionText = document.querySelectorAll('.progress-text');
+let progressSectionText;
 const audioIcon = document.querySelector('#audio-icon');
-let one;
 
 //Speech
 const synth = window.speechSynthesis;
@@ -83,6 +82,10 @@ function generateProgessSectionUnanswered() {
     ).join('');
 }
 
+function progressEventListeners() {
+
+}
+
 function updateProgressSection() {
   if ((Object.keys(englishEmojiMappingCompleted).length) === (Object.keys(englishEmojiMapping).length)) {
     htmlEmoji = generateProgessSectionEmojis();
@@ -93,8 +96,9 @@ function updateProgressSection() {
   htmlUnanswered = generateProgessSectionUnanswered();
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
-  one = document.getElementById('one');
-  // progressSectionText = document.querySelectorAll('.progress-text');
+
+  progressSectionText = Array.from(document.querySelectorAll('.progress-text'));
+  progressEventListeners()
 }
 
 function updateUncompletedObject(randomeEmoji) {
