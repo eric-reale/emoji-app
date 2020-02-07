@@ -2,49 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Title</title>
+  <title>Learn new words!</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./src/css/base.css">
+  <link rel="stylesheet" href="./src/css/learn.css">
   <script src="https://kit.fontawesome.com/4d1d0546e8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="outer-container">
-    <div class="header-bar">
-      <div class='header-item background-button'>text 1</div>
-      <div class='header-item language-section'>
-        <p class="language">🇫🇷</p>
-        <p><i class="arrow down"></i></p>
+  <div class="learn-container">
+    <div class="learn-header">
+      <div class="language-flag">
+        <p style="font-size: 40px; margin: 10px">🇫🇷</p>
       </div>
-      <div class='header-item background-button'>33%</div>
-    </div>
-
-    <div class="inner-container">
-      <div class="grid">
-        <div class="grid-item">
-          <i class="main-icon fas fa-pencil-alt fa-8x"></i>
-          <p>Learn</p>
-          <hr>
-        </div>
-        <div class="grid-item">
-          <i class="main-icon fas fa-book-open fa-8x"></i>
-          <p>Study</p>
-          <hr>
-        </div>
-        <div class="grid-item">
-          <i class="main-icon fas fa-graduation-cap fa-8x"></i>
-          <p>Knowledge Bank</p>
-          <hr>
-        </div>
+      <div class="percentage">
+        <p id="percentage">33%</p>
       </div>
     </div>
 
-    <!-- <div class="footer-bar">
-      <div class='footer-item background-button'>text 1</div>
-      <div class='footer-item'>text 2</div>
-      <div class='footer-item background-button'>text 3</div>
-    </div> -->
+    <div class="emoji">
+      <h1 id="emoji">😀</h1>
+    </div>
+
+    <div class="english-word">
+      <h1 id="english-word">Happy</h1>
+    </div>
+
+    <div class="language-word">
+      <h1 id="language-word-primary">Content</h1>
+      <svg id='audio-icon' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>ic_bluetooth_audio_24px</title><g class="nc-icon-wrapper" fill="#111111"><path d="M14.24 12.01l2.32 2.32c.28-.72.44-1.51.44-2.33 0-.82-.16-1.59-.43-2.31l-2.33 2.32zm5.29-5.3l-1.26 1.26c.63 1.21.98 2.57.98 4.02s-.36 2.82-.98 4.02l1.2 1.2c.97-1.54 1.54-3.36 1.54-5.31-.01-1.89-.55-3.67-1.48-5.19zm-3.82 1L10 2H9v7.59L4.41 5 3 6.41 8.59 12 3 17.59 4.41 19 9 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM11 5.83l1.88 1.88L11 9.59V5.83zm1.88 10.46L11 18.17v-3.76l1.88 1.88z"/></g></svg>
+      <h1 id="language-word-secondary"></h1>
+    </div>
+
+    <div class="next-button">
+      <button id="next">Next</button>
+    </div>
+
+    <div class="progress-section">
+      <h1>🔣</h1>
+      <h1>🔣</h1>
+      <h1>🔣</h1>
+      <h1>🔣</h1>
+      <h1>🔣</h1>
+      <h1>🔣</h1>
+    </div>
+
+
   </div>
 
 <script src="./src/index.js"></script>
