@@ -5,8 +5,9 @@ const languageWordSecondary = document.querySelector('#language-word-secondary')
 const percentage = document.querySelector('#percentage');
 const nextButton = document.querySelector('#next');
 const progressSection = document.querySelector('.progress-section');
-let progressSectionText = Array.from(document.querySelectorAll('.progress-text'));
+// let progressSectionText = document.querySelectorAll('.progress-text');
 const audioIcon = document.querySelector('#audio-icon');
+let one;
 
 //Speech
 const synth = window.speechSynthesis;
@@ -84,7 +85,6 @@ function generateProgessSectionUnanswered() {
 
 function updateProgressSection() {
   if ((Object.keys(englishEmojiMappingCompleted).length) === (Object.keys(englishEmojiMapping).length)) {
-    console.log('diff')
     htmlEmoji = generateProgessSectionEmojis();
     progressSection.innerHTML = htmlEmoji;
     return;
@@ -93,6 +93,7 @@ function updateProgressSection() {
   htmlUnanswered = generateProgessSectionUnanswered();
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
+  one = document.getElementById('one');
   // progressSectionText = document.querySelectorAll('.progress-text');
 }
 
@@ -149,11 +150,11 @@ synth.addEventListener('voiceschanged', function() {
   audioIcon.addEventListener('click', populateVoices);
 });
 
-updatePercentage();
-learnNewWord();
-
 // document.addEventListener('DOMContentLoaded', updatePercentage);
 // document.addEventListener('DOMContentLoaded', learnNewWord);
+// document.addEventListener('DOMContentLoaded', function() {
+//   one = document.getElementById('one');
+// });
 
 
 // nextButton.addEventListener('click', learnNewWord);
@@ -163,27 +164,14 @@ emojiDisplay.addEventListener('animationend', () => {
   languageWordPrimary.classList.remove('new-text')
 });
 
-function returnToPreviousEmoji() {
-  console.log('here')
-  console.log(e.target);
-  console.log(e.currentTarget);
-}
-
-progressSectionText.forEach(emoji => {
-  console.log(emoji);
-  emoji.addEventListener('hover', function() {
-    console.log('here')
-  });
-})
-
-
-// if(document.readyState !== 'loading' ) {
-//     updatePercentage();
-// } else {
-//     document.addEventListener('DOMContentLoaded', function () {
-//         updatePercentage();
-//     });
+// function returnToPreviousEmoji() {
+//   console.log('here')
+//   console.log(e.target);
+//   console.log(e.currentTarget);
 // }
+
+updatePercentage();
+learnNewWord();
 
 
 
