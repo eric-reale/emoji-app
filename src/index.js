@@ -83,18 +83,15 @@ function generateProgessSectionUnanswered() {
 
 function updateProgressSection() {
   if ((Object.keys(englishEmojiMappingCompleted).length) === (Object.keys(englishEmojiMapping).length)) {
-    // console.log('here');
+    console.log('diff')
     htmlEmoji = generateProgessSectionEmojis();
     progressSection.innerHTML = htmlEmoji;
     return;
   }
-
   htmlEmoji = generateProgessSectionEmojis();
   htmlUnanswered = generateProgessSectionUnanswered();
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
-
-  // englishWord.classList.remove('new-text');
 }
 
 function updateUncompletedObject(randomeEmoji) {
@@ -114,7 +111,14 @@ function resetLanguageObjects() {
   learnNewWord();
 }
 
-function learnNewWord() {
+function addClassLists() {
+  emojiDisplay.classList.add('new-text');
+  englishWord.classList.add('new-text');
+  languageWordPrimary.classList.add('new-text')
+  languageWordPrimary.classList.add('new-language-text')
+}
+
+async function learnNewWord() {
   if (Object.keys(englishEmojiMappingUncompleted).length) {
     var english = Object.keys(englishEmojiMappingUncompleted)
   } else {
@@ -127,7 +131,8 @@ function learnNewWord() {
   const englishVocab = englishEmojiMappingUncompleted[`${randomeEmoji}`];
   const frenchVocab = frenchEmojiMappingUncompleted[`${randomeEmoji}`];
 
-  englishWord.classList.add('new-text');
+  addClassLists();
+
   emojiDisplay.innerText = randomeEmoji;
   englishWord.innerText = englishVocab;
   languageWordPrimary.innerText = frenchVocab;
@@ -146,16 +151,11 @@ synth.addEventListener('voiceschanged', function() {
 updatePercentage();
 
 // nextButton.addEventListener('click', learnNewWord);
-// nextButton.addEventListener('click', learnNewWord);
-
-
-function cursorPointer() {
-  console.log(this);
-}
-
-nextButton.addEventListener('mouseover', cursorPointer)
-
-
+emojiDisplay.addEventListener('animationend', () => {
+  emojiDisplay.classList.remove('new-text');
+  englishWord.classList.remove('new-text');
+  languageWordPrimary.classList.remove('new-text')
+});
 
 
 

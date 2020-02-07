@@ -103,7 +103,11 @@
 }
 
 .new-text {
-  animation: fadeIn 0.4s ease;
+  animation: fadeIn 0.7s ease;
+}
+
+.new-language-text {
+  animation: fontbulger 2s infinite;
 }
 
 button {
@@ -119,4 +123,21 @@ button {
         opacity: 1;
         transform: translateY(endYposition);
     }
+}
+
+
+@keyframes fontbulger {
+  0% {
+    font-size: 32px;
+  }
+  30% {
+    font-size: 40px;
+  }
+  100% {
+    font-size: 32px;
+  }
+}
+
+#box {
+   animation: fontbulger 2s infinite;
 }
