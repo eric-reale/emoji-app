@@ -82,8 +82,16 @@ function generateProgessSectionUnanswered() {
     ).join('');
 }
 
-function progressEventListeners() {
+function returnToPreviousEmoji(e) {
+  console.log('here')
+  console.log(e.target);
+  console.log(e.currentTarget);
+}
 
+function progressEventListeners() {
+  progressSectionText.forEach(emoji => {
+    emoji.addEventListener('click', returnToPreviousEmoji)
+  })
 }
 
 function updateProgressSection() {
@@ -168,14 +176,9 @@ emojiDisplay.addEventListener('animationend', () => {
   languageWordPrimary.classList.remove('new-text')
 });
 
-// function returnToPreviousEmoji() {
-//   console.log('here')
-//   console.log(e.target);
-//   console.log(e.currentTarget);
-// }
 
-updatePercentage();
-learnNewWord();
+// updatePercentage();
+// learnNewWord();
 
 
 
