@@ -163,14 +163,26 @@ emojiDisplay.addEventListener('animationend', () => {
   languageWordPrimary.classList.remove('new-text')
 });
 
-function returnToPreviousEmoji(e) {
+function returnToPreviousEmoji() {
+  console.log('here')
   console.log(e.target);
   console.log(e.currentTarget);
 }
 
 progressSectionText.forEach(emoji => {
-  emoji.addEventListener('click', returnToPreviousEmoji);
+  emoji.addEventListener('click', function() {
+    console.log('here')
+  });
 })
+
+
+if(document.readyState !== 'loading' ) {
+    updatePercentage();
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        updatePercentage();
+    });
+}
 
 
 
