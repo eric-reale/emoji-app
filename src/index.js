@@ -164,18 +164,12 @@ synth.addEventListener('voiceschanged', function() {
 
 document.addEventListener('DOMContentLoaded', updatePercentage);
 document.addEventListener('DOMContentLoaded', learnNewWord);
-// document.addEventListener('DOMContentLoaded', function() {
-//   one = document.getElementById('one');
-// });
 
-
-// nextButton.addEventListener('click', learnNewWord);
 emojiDisplay.addEventListener('animationend', () => {
   emojiDisplay.classList.remove('new-text');
   englishWord.classList.remove('new-text');
   languageWordPrimary.classList.remove('new-text')
 });
-
 
 // updatePercentage();
 // learnNewWord();

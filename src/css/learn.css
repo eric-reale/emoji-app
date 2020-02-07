@@ -40,7 +40,6 @@
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 0;
-  font-size: 54px;
 }
 
 .english-word {
@@ -53,6 +52,7 @@
 .english-word h1 {
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 18px;
 }
 
 .language-word {
