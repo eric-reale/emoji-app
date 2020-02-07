@@ -72,6 +72,7 @@
   text-align: center;
   display: flex;
   align-self: center;
+  cursor: pointer;
 }
 
 .next-button {
@@ -87,7 +88,10 @@
   background-color: var(--emoji-yellow);
   color: var(--background-blue);
   font-family: 'Slackey', cursive;
+  cursor: pointer;
 }
+
+
 
 .progress-section {
   grid-area: progress-section;
@@ -101,6 +105,9 @@
   animation: fadeIn 0.4s ease;
 }
 
+button {
+  cursor: pointer;
+}
 
 @keyframes fadeIn {
     0% {

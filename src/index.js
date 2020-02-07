@@ -94,7 +94,7 @@ function updateProgressSection() {
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
 
-  englishWord.classList.remove('new-text');
+  // englishWord.classList.remove('new-text');
 }
 
 function updateUncompletedObject(randomeEmoji) {
@@ -145,7 +145,15 @@ synth.addEventListener('voiceschanged', function() {
 
 updatePercentage();
 
-nextButton.addEventListener('click', learnNewWord);
+// nextButton.addEventListener('click', learnNewWord);
+// nextButton.addEventListener('click', learnNewWord);
+
+
+function cursorPointer() {
+  console.log(this);
+}
+
+nextButton.addEventListener('mouseover', cursorPointer)
 
 
 
