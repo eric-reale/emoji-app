@@ -93,6 +93,8 @@ function updateProgressSection() {
   htmlUnanswered = generateProgessSectionUnanswered();
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
+
+  englishWord.classList.remove('new-text');
 }
 
 function updateUncompletedObject(randomeEmoji) {
@@ -119,14 +121,17 @@ function learnNewWord() {
     resetLanguageObjects();
     return;
   }
+
   const randomeEmoji = english[Math.floor(Math.random() * english.length)]
 
   const englishVocab = englishEmojiMappingUncompleted[`${randomeEmoji}`];
   const frenchVocab = frenchEmojiMappingUncompleted[`${randomeEmoji}`];
 
+  englishWord.classList.add('new-text');
   emojiDisplay.innerText = randomeEmoji;
   englishWord.innerText = englishVocab;
   languageWordPrimary.innerText = frenchVocab;
+
   updateUncompletedObject(randomeEmoji);
 }
 
