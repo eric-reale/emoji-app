@@ -162,8 +162,8 @@ synth.addEventListener('voiceschanged', function() {
   audioIcon.addEventListener('click', populateVoices);
 });
 
-// document.addEventListener('DOMContentLoaded', updatePercentage);
-// document.addEventListener('DOMContentLoaded', learnNewWord);
+document.addEventListener('DOMContentLoaded', updatePercentage);
+document.addEventListener('DOMContentLoaded', learnNewWord);
 // document.addEventListener('DOMContentLoaded', function() {
 //   one = document.getElementById('one');
 // });
