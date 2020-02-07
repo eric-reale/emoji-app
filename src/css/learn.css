@@ -93,13 +93,16 @@
 }
 
 
-
 .progress-section {
   grid-area: progress-section;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   align-items: center;
+}
+
+.progress-text {
+  cursor: pointer;
 }
 
 .new-text {

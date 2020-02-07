@@ -149,11 +149,11 @@ synth.addEventListener('voiceschanged', function() {
   audioIcon.addEventListener('click', populateVoices);
 });
 
-// updatePercentage();
-// learnNewWord();
+updatePercentage();
+learnNewWord();
 
-document.addEventListener('DOMContentLoaded', updatePercentage);
-document.addEventListener('DOMContentLoaded', learnNewWord);
+// document.addEventListener('DOMContentLoaded', updatePercentage);
+// document.addEventListener('DOMContentLoaded', learnNewWord);
 
 
 // nextButton.addEventListener('click', learnNewWord);
@@ -170,21 +170,20 @@ function returnToPreviousEmoji() {
 }
 
 progressSectionText.forEach(emoji => {
-  emoji.addEventListener('click', function() {
+  console.log(emoji);
+  emoji.addEventListener('hover', function() {
     console.log('here')
   });
 })
 
 
-if(document.readyState !== 'loading' ) {
-    updatePercentage();
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        updatePercentage();
-    });
-}
-
-
+// if(document.readyState !== 'loading' ) {
+//     updatePercentage();
+// } else {
+//     document.addEventListener('DOMContentLoaded', function () {
+//         updatePercentage();
+//     });
+// }
 
 
 
