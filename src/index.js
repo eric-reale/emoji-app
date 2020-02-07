@@ -149,6 +149,7 @@ synth.addEventListener('voiceschanged', function() {
 });
 
 updatePercentage();
+learnNewWord();
 
 // nextButton.addEventListener('click', learnNewWord);
 emojiDisplay.addEventListener('animationend', () => {
@@ -156,6 +157,7 @@ emojiDisplay.addEventListener('animationend', () => {
   englishWord.classList.remove('new-text');
   languageWordPrimary.classList.remove('new-text')
 });
+
 
 
 
