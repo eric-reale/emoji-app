@@ -5,6 +5,7 @@ const languageWordSecondary = document.querySelector('#language-word-secondary')
 const percentage = document.querySelector('#percentage');
 const nextButton = document.querySelector('#next');
 const progressSection = document.querySelector('.progress-section');
+let progressSectionText = Array.from(document.querySelectorAll('.progress-text'));
 const audioIcon = document.querySelector('#audio-icon');
 
 //Speech
@@ -67,7 +68,7 @@ function generateProgessSectionEmojis() {
   return Object.keys(englishEmojiMappingCompleted)
     .map(
       (emoji) =>
-        `<h1>${emoji}</h1>`
+        `<h1 class="progress-text">${emoji}</h1>`
     ).join('');
 }
 function generateProgessSectionUnanswered() {
@@ -77,7 +78,7 @@ function generateProgessSectionUnanswered() {
   return Object.keys(englishEmojiMappingUncompleted)
     .map(
       (emoji) =>
-        `<h1>🔣</h1>`
+        `<h1 class="progress-text">🔣</h1>`
     ).join('');
 }
 
@@ -92,6 +93,7 @@ function updateProgressSection() {
   htmlUnanswered = generateProgessSectionUnanswered();
   progressSection.innerHTML = htmlEmoji;
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
+  // progressSectionText = document.querySelectorAll('.progress-text');
 }
 
 function updateUncompletedObject(randomeEmoji) {
@@ -114,8 +116,7 @@ function resetLanguageObjects() {
 function addClassLists() {
   emojiDisplay.classList.add('new-text');
   englishWord.classList.add('new-text');
-  languageWordPrimary.classList.add('new-text')
-  languageWordPrimary.classList.add('new-language-text')
+  languageWordPrimary.classList.add('new-text');
 }
 
 async function learnNewWord() {
@@ -148,8 +149,12 @@ synth.addEventListener('voiceschanged', function() {
   audioIcon.addEventListener('click', populateVoices);
 });
 
-updatePercentage();
-learnNewWord();
+// updatePercentage();
+// learnNewWord();
+
+document.addEventListener('DOMContentLoaded', updatePercentage);
+document.addEventListener('DOMContentLoaded', learnNewWord);
+
 
 // nextButton.addEventListener('click', learnNewWord);
 emojiDisplay.addEventListener('animationend', () => {
@@ -158,6 +163,14 @@ emojiDisplay.addEventListener('animationend', () => {
   languageWordPrimary.classList.remove('new-text')
 });
 
+function returnToPreviousEmoji(e) {
+  console.log(e.target);
+  console.log(e.currentTarget);
+}
+
+progressSectionText.forEach(emoji => {
+  emoji.addEventListener('click', returnToPreviousEmoji);
+})
 
 
 
