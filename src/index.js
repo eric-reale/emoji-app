@@ -72,8 +72,6 @@ function generateProgessSectionEmojis() {
     ).join('');
 }
 function generateProgessSectionUnanswered() {
-  // console.log(progressSection.getElementsByTagName('*').length);
-  // console.log(Object.keys(frenchEmojiMapping).length);
   if (!Object.keys(englishEmojiMappingUncompleted).length) return;
   return Object.keys(englishEmojiMappingUncompleted)
     .map(
@@ -83,9 +81,13 @@ function generateProgessSectionUnanswered() {
 }
 
 function returnToPreviousEmoji(e) {
-  console.log('here')
-  console.log(e.target);
-  console.log(e.currentTarget);
+  if (e.currentTarget.innerText === '🔣') return;
+
+  const emojiSelected = e.currentTarget.innerText;
+  addClassLists();
+  emojiDisplay.innerText = emojiSelected
+  englishWord.innerText = englishEmojiMapping[`${emojiSelected}`];
+  languageWordPrimary.innerText = frenchEmojiMapping[`${emojiSelected}`];
 }
 
 function progressEventListeners() {
@@ -98,6 +100,8 @@ function updateProgressSection() {
   if ((Object.keys(englishEmojiMappingCompleted).length) === (Object.keys(englishEmojiMapping).length)) {
     htmlEmoji = generateProgessSectionEmojis();
     progressSection.innerHTML = htmlEmoji;
+    progressSectionText = Array.from(document.querySelectorAll('.progress-text'));
+    progressEventListeners();
     return;
   }
   htmlEmoji = generateProgessSectionEmojis();
@@ -106,7 +110,7 @@ function updateProgressSection() {
   progressSection.insertAdjacentHTML('beforeend', htmlUnanswered);
 
   progressSectionText = Array.from(document.querySelectorAll('.progress-text'));
-  progressEventListeners()
+  progressEventListeners();
 }
 
 function updateUncompletedObject(randomeEmoji) {
