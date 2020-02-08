@@ -1,3 +1,11 @@
+if( document.readyState !== 'loading' ) {
+    learnNewWord();
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        learnNewWord();
+    });
+}
+
 const emojiDisplay = document.querySelector('#emoji');
 const englishWord = document.querySelector('#english-word');
 const languageWordPrimary = document.querySelector('#language-word-primary');
@@ -20,7 +28,7 @@ const englishEmojiMapping =
   {
     "😀": 'Happy',
     "😄": "Laugh",
-    "😉": "Wink",
+    "🥳": "Festive",
     "😋": "Tasty",
     "😠": "Angry",
     "🤒": "Sick"
@@ -30,7 +38,7 @@ const frenchEmojiMapping =
   {
     "😀": 'Content',
     "😄": "Rire",
-    "😉": "Le clignement",
+    "🥳": "De fête",
     "😋": "Savoureux",
     "😠": "En colère",
     "🤒": "Malade"
@@ -167,7 +175,7 @@ synth.addEventListener('voiceschanged', function() {
 });
 
 document.addEventListener('DOMContentLoaded', updatePercentage);
-document.addEventListener('DOMContentLoaded', learnNewWord);
+// document.addEventListener('DOMContentLoaded', learnNewWord);
 
 emojiDisplay.addEventListener('animationend', () => {
   emojiDisplay.classList.remove('new-text');
